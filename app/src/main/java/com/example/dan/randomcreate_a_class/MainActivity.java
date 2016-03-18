@@ -138,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
         else if(blVert == 1)
         {
             attachText.setText(bigList.get(5).get(attachRand(AR_MIN, AR_MAX)).getName());
+            //comment
         }
 
 
