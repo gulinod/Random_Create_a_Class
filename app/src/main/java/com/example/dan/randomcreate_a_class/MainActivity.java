@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         {
             attachText.setText(bigList.get(5).get(attachRand(AR_MIN, AR_MAX)).getName());
         }
-      
+
 
 
     }
