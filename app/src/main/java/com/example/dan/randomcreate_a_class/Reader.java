@@ -2,7 +2,6 @@ package com.example.dan.randomcreate_a_class;
 import android.app.Activity;
 
 import java.util.*;
-import java.io.*;
 
 
 /**
@@ -10,10 +9,10 @@ import java.io.*;
  */
 public class Reader extends Activity {
 
-    String line = null;
-    String type = null;
+
+
     String name = null;
-    String test = null;
+    int i =0;
     private ArrayList<Item> ar = new ArrayList<Item>();
     private ArrayList<Item>  smg = new ArrayList<Item>();
     private ArrayList<Item> lmg = new ArrayList<Item>();
@@ -26,20 +25,48 @@ public class Reader extends Activity {
     private ArrayList<Item> pistol = new ArrayList<Item>();
     private ArrayList<Item> attach = new ArrayList<Item>();
     private ArrayList<ArrayList<Item>> bigList = new ArrayList<ArrayList<Item>>(); //oh boy
+    private ArrayList<Integer> images = new ArrayList<Integer>();
 
 
-    public void read(String input)
+    public void read(String weapons)
     {
 
         //make list of opjects
         Item it = new Item();
-        test = input;
+
+
 
           String line = "";
 
 
+            images.add(R.drawable.weap_1);
+            images.add(R.drawable.weap_2);
+            images.add(R.drawable.weap_3);
+            images.add(R.drawable.weap_4);
+            images.add(R.drawable.weap_5);
+            images.add(R.drawable.weap_6);
+            images.add(R.drawable.weap_7);
+            images.add(R.drawable.weapon_mp5);
+            images.add(R.drawable.weapon_mini_uzi);
+            images.add(R.drawable.weapon_skorpion);
+            images.add(R.drawable.weapon_p90);
+            images.add(R.drawable.weapon_aks74u);
+            images.add(R.drawable.weapon_m249saw);
+            images.add(R.drawable.weapon_rpd);
+            images.add(R.drawable.weapon_m60e4);
+            images.add(R.drawable.weapon_winchester1200_grip);
+            images.add(R.drawable.weapon_benelli_m4);
+            images.add(R.drawable.weapon_m40a3);
+            images.add(R.drawable.weapon_m14_scoped);
+            images.add(R.drawable.weapon_dragunovsvd);
+            images.add(R.drawable.weapon_remington700);
+            images.add(R.drawable.weapon_barrett50cal);
 
-            Scanner read = new Scanner(test);
+
+
+        Scanner read = new Scanner(weapons);
+            //Scanner loc =  new Scanner(locations);
+
             read.useDelimiter(":");
 
             //while file is not done
@@ -47,38 +74,48 @@ public class Reader extends Activity {
             {
                 //System.out.println("has next 1" + read.next());
                 line = read.next();
+                /*if(loc.hasNext())
+                {
+                    loc.next();
+                }*/
                 // try switch statement
                 switch(line)
                 {
                     case "AR":// line.equals("AR");
                         line = read.next();
+                       // loca = loc.next();
                         name = line;
-                        it = new Item(name);
+                        it = new Item(name,images.get(i)); //stores the name and location of source file for image
                         ar.add(it);
+                        i++;
                         break;
                     case "SMG":/// line.equals("SMG");
                         line = read.next();
                         name = line;
-                        it = new Item(name);
+                        it = new Item(name,images.get(i));
                         smg.add(it);
+                        i++;
                         break;
                     case "LMG":// line.equals("LMG");
                         line = read.next();
                         name = line;
-                        it = new Item(name);
+                        it = new Item(name,images.get(i));
                         lmg.add(it);
+                        i++;
                         break;
                     case "SHOT": //line.equals("SHOT");
                         line = read.next();
                         name = line;
-                        it = new Item(name);
+                        it = new Item(name,images.get(i));
                         shottie.add(it);
+                        i++;
                         break;
                     case "SCOPE": //line.equals("SCOPE");
                         line = read.next();
                         name = line;
-                        it = new Item(name);
+                        it = new Item(name,images.get(i));
                         sniper.add(it);
+                        i++;
                         break;
                     case "PERK1":// line.equals("PERK1");
                         line = read.next();
@@ -109,11 +146,13 @@ public class Reader extends Activity {
                         name = line;
                         it = new Item(name);
                         pistol.add(it);
+                        break;
                     case "ATTA":
                         line = read.next();
                         name = line;
                         it = new Item(name);
                         attach.add(it);
+                        break;
 
 
 
