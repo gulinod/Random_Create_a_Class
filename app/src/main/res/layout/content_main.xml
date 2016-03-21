@@ -19,11 +19,10 @@
         android:layout_height="wrap_content"
         android:text="Randomize Loadout"
         android:id="@+id/randomButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_marginBottom="49dp"
-        android:onClick="buttonOnClick" />
+        android:onClick="buttonOnClick"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -32,9 +31,7 @@
         android:background="@drawable/weap_3"
         android:baselineAlignBottom="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -122,61 +119,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Perk1:"
+        android:text="Perk 1"
         android:id="@+id/Perk1Text"
-        android:layout_below="@+id/GrenadeText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_above="@+id/randomButton"
+        android:layout_alignLeft="@+id/primaryImage"
+        android:layout_marginBottom="68dp"
+        android:layout_toLeftOf="@+id/Perk2Text"
+       />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Bomb Squad"
         android:id="@+id/Perk1Info"
-        android:layout_below="@+id/GrenadeInfo"
-        android:layout_toRightOf="@+id/Perk1Text"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_below="@+id/Perk1Text"
+        android:layout_alignLeft="@+id/Perk2Text"
+        android:layout_marginBottom="50dp"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Perk2:"
+        android:text="Perk 2"
         android:id="@+id/Perk2Text"
-        android:layout_below="@+id/Perk1Text"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginBottom="68dp"
+        android:layout_above="@+id/randomButton"
+        android:layout_centerHorizontal="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Stopping Power"
         android:id="@+id/Perk2Info"
-        android:layout_below="@+id/Perk1Info"
-        android:layout_toRightOf="@+id/Perk1Text"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_below="@+id/Perk2Text"
+        android:layout_toRightOf="@+id/Perk1Info"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Perk3:"
+        android:text="Perk 3"
         android:id="@+id/Perk3Text"
-        android:layout_below="@+id/Perk2Text"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_alignTop="@+id/Perk2Text"
+        android:layout_alignRight="@+id/primaryImage"
+        android:layout_alignEnd="@+id/primaryImage" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Steady Aim"
         android:id="@+id/Perk3Info"
-        android:layout_below="@+id/Perk2Info"
-        android:layout_toRightOf="@+id/Perk2Text"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/PrimaryWeaponInfo"
+        android:layout_toEndOf="@+id/PrimaryWeaponInfo" />
 
 </RelativeLayout>
