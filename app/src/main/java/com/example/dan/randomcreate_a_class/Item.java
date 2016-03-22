@@ -1,7 +1,7 @@
 package com.example.dan.randomcreate_a_class;
 
 /**
- * Created by Dan on 3/10/2016.
+ * Created by Dan | March 2016.
  */
 public class Item {
 

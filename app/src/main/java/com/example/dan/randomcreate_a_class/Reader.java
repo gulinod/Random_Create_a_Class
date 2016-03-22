@@ -3,12 +3,10 @@ import android.app.Activity;
 
 import java.util.*;
 
-
 /**
- * Created by Dan Gulino on March/2016.
+ * Created by Dan Gulino March|2016.
  */
 public class Reader extends Activity {
-
 
 
     String name = null;
@@ -31,14 +29,14 @@ public class Reader extends Activity {
     public void read(String weapons)
     {
 
-        //make list of opjects
+
         Item it = new Item();
 
 
 
           String line = "";
 
-
+            //adds drable weapon image ID's to an arraylist of ints (Has to be a better way)
             images.add(R.drawable.weap_1);
             images.add(R.drawable.weap_2);
             images.add(R.drawable.weap_3);
@@ -65,77 +63,78 @@ public class Reader extends Activity {
 
 
         Scanner read = new Scanner(weapons);
-            //Scanner loc =  new Scanner(locations);
+
 
             read.useDelimiter(":");
 
-            //while file is not done
+
             while(read.hasNextLine())
             {
-                //System.out.println("has next 1" + read.next());
+
                 line = read.next();
-                /*if(loc.hasNext())
-                {
-                    loc.next();
-                }*/
-                // try switch statement
+
                 switch(line)
                 {
-                    case "AR":// line.equals("AR");
+                    case "AR":// checks line againts the case statement
+                        //if the case is true read the next line to get the weapon
                         line = read.next();
-                       // loca = loc.next();
+                        //set name = to line?
                         name = line;
-                        it = new Item(name,images.get(i)); //stores the name and location of source file for image
+                        //create a new object with weapon name and drawable image ID
+                        it = new Item(name,images.get(i));
+                        //adds to array list for the catagory
                         ar.add(it);
+                        //increments the counter for drawable ID array These comments hold true
+                        //for the rest of the switch statement
                         i++;
                         break;
-                    case "SMG":/// line.equals("SMG");
+                    case "SMG":
                         line = read.next();
                         name = line;
                         it = new Item(name,images.get(i));
                         smg.add(it);
                         i++;
                         break;
-                    case "LMG":// line.equals("LMG");
+                    case "LMG":
                         line = read.next();
                         name = line;
                         it = new Item(name,images.get(i));
                         lmg.add(it);
                         i++;
                         break;
-                    case "SHOT": //line.equals("SHOT");
+                    case "SHOT":
                         line = read.next();
                         name = line;
                         it = new Item(name,images.get(i));
                         shottie.add(it);
                         i++;
                         break;
-                    case "SCOPE": //line.equals("SCOPE");
+                    case "SCOPE":
                         line = read.next();
                         name = line;
                         it = new Item(name,images.get(i));
                         sniper.add(it);
                         i++;
                         break;
-                    case "PERK1":// line.equals("PERK1");
+                    case "PERK1":
                         line = read.next();
                         name = line;
                         it = new Item(name);
                         perk1.add(it);
                         break;
-                    case "PERK2": //line.equals("PERK2");
+                    case "PERK2":
                         line = read.next();
                         name = line;
                         it = new Item(name);
                         perk2.add(it);
                         break;
-                    case "PERK3":// line.equals("PERK3");
+                    case "PERK3":
                         line = read.next();
                         name = line;
                         it = new Item(name);
                         perk3.add(it);
                         break;
-                    case "GRENADE": //line.equals("GRENADE");
+                    case "GRENADE":
                         line = read.next();
                         name = line;
                         it = new Item(name);
@@ -158,14 +157,9 @@ public class Reader extends Activity {
 
                 }
 
-                //System.out.print(line);
-
-
-                //creates a new item and puts line as its text
-                //line = null;
-
             }
 
+            //add arraylists of items to the arraylist
             bigList.add(ar);
             bigList.add(smg);
             bigList.add(lmg);
@@ -179,19 +173,8 @@ public class Reader extends Activity {
             bigList.add(perk3);
 
 
-
-
-
-       /*}
-        catch(FileNotFoundException e)
-        {
-            System.out.println("Unable to open file '" +  test + "'" );
-
-        }*/
-
-
     }
-    /////Allows other classes to access the array lists\\\\\\\\
+    //Allows other classes to access the array lists
     public ArrayList<Item> getAr()
     {
         return ar;
