@@ -10,8 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.dan.randomcreate_a_class.MainActivity"
-    tools:showIn="@layout/activity_main"
-    android:background="#9c9a9a">
+    tools:showIn="@layout/activity_main">
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -24,6 +23,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
+<<<<<<< HEAD
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,13 +33,15 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
+=======
+>>>>>>> parent of e53e460... update
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/primary_text"
         android:id="@+id/PrimaryText"
-        android:layout_below="@+id/primaryImage"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -48,7 +50,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="M-16"
-        android:layout_below="@+id/primaryImage"
         android:id="@+id/PrimaryWeaponInfo"
         android:layout_toRightOf="@+id/PrimaryText"
         android:layout_toEndOf="@+id/PrimaryText"

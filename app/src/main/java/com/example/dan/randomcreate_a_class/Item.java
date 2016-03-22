@@ -6,7 +6,7 @@ package com.example.dan.randomcreate_a_class;
 public class Item {
 
     private String itemName = null;
-    private int picLoc = 0;
+    private String picLoc = null;
 
 
     public Item()
@@ -18,7 +18,7 @@ public class Item {
         itemName = name;
 
     }
-    public Item(String name, int loc)
+    public Item(String name, String loc)
     {
         itemName = name;
         picLoc = loc;
@@ -29,7 +29,7 @@ public class Item {
     {
         return itemName;
     }
-    public int getPicLoc()
+    public String getPicLoc()
     {
         return picLoc;
     }
@@ -37,7 +37,7 @@ public class Item {
     {
         itemName = name;
     }
-    public void setPicLoc(int loc)
+    public void setPicLoc(String loc)
     {
         picLoc = loc;
     }
