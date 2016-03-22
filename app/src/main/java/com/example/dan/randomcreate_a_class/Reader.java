@@ -5,7 +5,7 @@ import java.util.*;
 
 
 /**
- * Created by Dan Gulino, March 2016.
+ * Created by Dan Gulino on March/2016.
  */
 public class Reader extends Activity {
 
@@ -38,7 +38,7 @@ public class Reader extends Activity {
 
           String line = "";
 
-            //add images to the image ID array (has to be a better way to do this)
+
             images.add(R.drawable.weap_1);
             images.add(R.drawable.weap_2);
             images.add(R.drawable.weap_3);
@@ -72,68 +72,70 @@ public class Reader extends Activity {
             //while file is not done
             while(read.hasNextLine())
             {
+                //System.out.println("has next 1" + read.next());
                 line = read.next();
+                /*if(loc.hasNext())
+                {
+                    loc.next();
+                }*/
+                // try switch statement
                 switch(line)
                 {
-                    case "AR":
-                        //gets the string after appropriate case
+                    case "AR":// line.equals("AR");
                         line = read.next();
-                        //sets name equal to line
+                       // loca = loc.next();
                         name = line;
-                        //creates a new item with appropriate text and image
-                        it = new Item(name,images.get(i));
-                        //adds it item to ar array
+                        it = new Item(name,images.get(i)); //stores the name and location of source file for image
                         ar.add(it);
-                        //increment counter
                         i++;
                         break;
-                    case "SMG":
+                    case "SMG":/// line.equals("SMG");
                         line = read.next();
                         name = line;
                         it = new Item(name,images.get(i));
                         smg.add(it);
                         i++;
                         break;
-                    case "LMG":
+                    case "LMG":// line.equals("LMG");
                         line = read.next();
                         name = line;
                         it = new Item(name,images.get(i));
                         lmg.add(it);
                         i++;
                         break;
-                    case "SHOT":
+                    case "SHOT": //line.equals("SHOT");
                         line = read.next();
                         name = line;
                         it = new Item(name,images.get(i));
                         shottie.add(it);
                         i++;
                         break;
-                    case "SCOPE":
+                    case "SCOPE": //line.equals("SCOPE");
                         line = read.next();
                         name = line;
                         it = new Item(name,images.get(i));
                         sniper.add(it);
                         i++;
                         break;
-                    case "PERK1":
+                    case "PERK1":// line.equals("PERK1");
                         line = read.next();
                         name = line;
                         it = new Item(name);
                         perk1.add(it);
                         break;
-                    case "PERK2":
+                    case "PERK2": //line.equals("PERK2");
                         line = read.next();
                         name = line;
                         it = new Item(name);
                         perk2.add(it);
                         break;
-                    case "PERK3":
+                    case "PERK3":// line.equals("PERK3");
                         line = read.next();
                         name = line;
                         it = new Item(name);
                         perk3.add(it);
                         break;
-                    case "GRENADE":
+                    case "GRENADE": //line.equals("GRENADE");
                         line = read.next();
                         name = line;
                         it = new Item(name);
@@ -156,9 +158,14 @@ public class Reader extends Activity {
 
                 }
 
+                //System.out.print(line);
+
+
+                //creates a new item and puts line as its text
+                //line = null;
+
             }
 
-            //adds ArrayList<Item's> to the appropriate positin.
             bigList.add(ar);
             bigList.add(smg);
             bigList.add(lmg);
@@ -173,8 +180,18 @@ public class Reader extends Activity {
 
 
 
+
+
+       /*}
+        catch(FileNotFoundException e)
+        {
+            System.out.println("Unable to open file '" +  test + "'" );
+
+        }*/
+
+
     }
-    //Allows other classes to access the array lists
+    /////Allows other classes to access the array lists\\\\\\\\
     public ArrayList<Item> getAr()
     {
         return ar;

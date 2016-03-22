@@ -1,7 +1,6 @@
 package com.example.dan.randomcreate_a_class;
-/**
- * Created by Dan Gulino, March 2016.
- */
+
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         primWeap = (ImageView) findViewById(R.id.primaryImage);
 
-        //for !!TESTING ONLY!!  proper file IO comes later
+        //for testing only file IO comes later
         String test = "AR:M-16:AR:M4:AR:AK-47:AR:M-14:AR:G36c:AR:G3:AR:MP44:SMG:MP5:SMG:Mini Uzi:SMG:Skorpian:SMG:P90:SMG:AK74u:LMG:M249 SAW:LMG:RPD:LMG:M60:SHOT:W1200:SHOT:M1014:SCOPE:M40A3:SCOPE:M21:SCOPE:Dragunov:SCOPE:r700:SCOPE:Barrett .50 Cal:PISTOL:M9:PISTOL:USP:PISTOL:M1911:PISTOL:Desert Eagle:PERK1:C4 x 2:PERK1:Special Grenades x 3:PERK1:RPG x 2:PERK1:Bomb Squad:PERK1:Bandolier:PERK2:Juggernaut:PERK2:Slight of Hand:PERK2:Double Tap:PERK2:Overkill:PERK2:UAV Jammer:PERK2:Sonic Boom:PERK2:Stopping power:PERK3:Extreme Conditioning:PERK3:Last Stand:PERK3:Martyrdom:PERK3:Deep Impact:PERK3:Iron Lungs:PERK3:Dead Silence:PERK3:Eavesdrop:PERK3:Steady Aim:GRENADE:Explosive:GRENADE:Flash Bang:GRENADE:Stun:GRENADE:Smoke:ATTA:Grip:ATTA:Iron Sights:ATTA:Red Dot Sight:ATTA:ACOG Scope:ATTA:Silencer:ATTA:Grenade Launcher:\n" ;
 
         //calls the read function to get the names of the weapons as well as drawable id
@@ -91,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         k = getItems(j);
         primaryText.setText(bigList1.get(i).get(k).getName());
 
-        //set image resources for primary weapon (Soon to include perks and more!)
+        //set image resources for primary weapon
         primWeap.setImageResource(R.color.colorMainActivityBG);
         primWeap.setBackgroundColor(getResources().getColor(R.color.colorMainActivityBG));
         primWeap.setImageResource(bigList1.get(i).get(k).getPicLoc());
@@ -106,15 +105,13 @@ public class MainActivity extends AppCompatActivity {
         i = 8;
         j = bigList1.get(i).size();
 
-        if(flag ==0)//handles if a perk is valid with the current weapon configuration
+        if(flag ==0)
         {
             perk1Text.setText(bigList1.get(i).get(getItems(j)).getName());
         }
         else
         {
             perk1Text.setText("Disabled");
-
-            //reset flag
             flag = 0;
         }
         i = 9;
@@ -137,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         int flip = 0;
 
         TextView attachText = (TextView)findViewById(R.id.attatchmentInfo);
-        //Determins attachments for AR's
+
         if(blVert == 0 && blHorz == 6)
         {
             attachText.setText("Iron Sights");
@@ -148,14 +145,14 @@ public class MainActivity extends AppCompatActivity {
             attachText.setText(bigList.get(5).get(attachRand(MIN, AR_MAX)).getName());
 
         }
-        if(blVert == 1)//attachments for SMG's
+        if(blVert == 1)
         {
             attachText.setText(bigList.get(5).get(attachRand(MIN, SMG_MAX)).getName());
         }
-        if(blVert == 2)//attachment LGM's
+        if(blVert == 2)
         {
             attachText.setText(bigList.get(5).get(attachRand(LMG_MIN, LMG_MAX)).getName());
-            if(attachText.getText().equals("Grip"))//if the attachment determined is a grip then throw the flag
+            if(attachText.getText().equals("Grip"))
             {
                 flag = 1;
             }
@@ -163,12 +160,12 @@ public class MainActivity extends AppCompatActivity {
         if(blVert == 3)
         {
             attachText.setText(bigList.get(5).get(attachRand(LMG_MIN, SHOT_MAX)).getName());
-            if(attachText.getText().equals("Grip"))//if the attachment determined is a grip set the flag
+            if(attachText.getText().equals("Grip"))
             {
                 flag = 1;
             }
         }
-        if(blVert == 4) //50/50 chance for ACOG or Defualt scope
+        if(blVert == 4)
         {
              flip = attachRand(LMG_MIN, AR_MAX);
             if(flip < 3)
